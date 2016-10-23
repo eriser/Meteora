@@ -118,6 +118,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\modules\mixers\BasicMixer.h" />
+    <ClInclude Include="src\modules\interfaces\InstrumentInterface.h" />
+    <ClInclude Include="src\modules\routers\SignalMultiplier.h" />
+    <ClInclude Include="src\modules\sequencers\Sequencer.h" />
+    <ClInclude Include="src\modules\routers\LineSelector.h" />
+    <ClInclude Include="src\modules\oscillators\LowFrequencyOscillator.h" />
+    <ClInclude Include="src\modules\filters\BandPassFilter.h" />
+    <ClInclude Include="src\modules\controllers\keyboards\Keyboard.h" />
+    <ClInclude Include="src\modules\filters\HighPassFilter.h" />
+    <ClInclude Include="src\modules\filters\LowPassFilter.h" />
+    <ClInclude Include="src\modules\filters\DigitalFilter.h" />
+    <ClInclude Include="src\modules\filters\Mixer.h" />
+    <ClInclude Include="src\modules\envelope\ADSR.h" />
+    <ClInclude Include="src\modules\effects\Chorus.h" />
+    <ClInclude Include="src\modules\effects\Delay.h" />
+    <ClInclude Include="src\modules\effects\Flanger.h" />
+    <ClInclude Include="src\modules\effects\Reverb.h" />
     <ClInclude Include="src\modules\generators\Sawtooth.h" />
     <ClInclude Include="src\modules\generators\SquareWave.h" />
     <ClInclude Include="src\modules\generators\SineWave.h" />
@@ -126,14 +143,35 @@
     <ClInclude Include="src\utils\MeteoraDefs.h" />
     <ClInclude Include="src\modules\generators\WhiteNoise.h" />
     <ClInclude Include="src\modules\generators\TriangleWave.h" />
+    <ClInclude Include="src\modules\oscillators\VoltageControlledOscillator.h" />
+    <ClInclude Include="src\modules\amplifiers\VoltageControlledAmplifier.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\modules\mixers\BasicMixer.cpp" />
+    <ClCompile Include="src\modules\interfaces\InstrumentInterface.cpp" />
+    <ClCompile Include="src\modules\routers\SignalMultiplier.cpp" />
+    <ClCompile Include="src\modules\sequencers\Sequencer.cpp" />
+    <ClCompile Include="src\modules\routers\LineSelector.cpp" />
+    <ClCompile Include="src\modules\oscillators\LowFrequencyOscillator.cpp" />
+    <ClCompile Include="src\modules\filters\BandPassFilter.cpp" />
+    <ClCompile Include="src\modules\controllers\keyboards\Keyboard.cpp" />
+    <ClCompile Include="src\modules\filters\HighPassFilter.cpp" />
+    <ClCompile Include="src\modules\filters\LowPassFilter.cpp" />
+    <ClCompile Include="src\modules\filters\DigitalFilter.cpp" />
+    <ClCompile Include="src\modules\filters\Mixer.cpp" />
+    <ClCompile Include="src\modules\envelope\ADSR.cpp" />
+    <ClCompile Include="src\modules\effects\Chorus.cpp" />
+    <ClCompile Include="src\modules\effects\Delay.cpp" />
+    <ClCompile Include="src\modules\effects\Flanger.cpp" />
+    <ClCompile Include="src\modules\effects\Reverb.cpp" />
     <ClCompile Include="src\modules\generators\Sawtooth.cpp" />
     <ClCompile Include="src\modules\generators\SquareWave.cpp" />
     <ClCompile Include="src\modules\generators\SineWave.cpp" />
     <ClCompile Include="src\modules\generators\IGenerator.cpp" />
     <ClCompile Include="src\modules\generators\WhiteNoise.cpp" />
     <ClCompile Include="src\modules\generators\TriangleWave.cpp" />
+    <ClCompile Include="src\modules\oscillators\VoltageControlledOscillator.cpp" />
+    <ClCompile Include="src\modules\amplifiers\VoltageControlledAmplifier.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
