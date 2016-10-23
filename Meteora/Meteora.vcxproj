@@ -118,16 +118,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\generators\Sawtooth.h" />
+    <ClInclude Include="src\generators\SquareWave.h" />
     <ClInclude Include="src\generators\SineWave.h" />
     <ClInclude Include="src\generators\IGenerator.h" />
     <ClInclude Include="src\models\MeteoraTypes.h" />
     <ClInclude Include="src\utils\MeteoraDefs.h" />
     <ClInclude Include="src\generators\WhiteNoise.h" />
+    <ClInclude Include="src\generators\TriangleWave.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\generators\Sawtooth.cpp" />
+    <ClCompile Include="src\generators\SquareWave.cpp" />
     <ClCompile Include="src\generators\SineWave.cpp" />
     <ClCompile Include="src\generators\IGenerator.cpp" />
     <ClCompile Include="src\generators\WhiteNoise.cpp" />
+    <ClCompile Include="src\generators\TriangleWave.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
