@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
-#include <generators/IGenerator.h>
-#include <generators/SineWave.h>
+#include <modules/generators/IGenerator.h>
+#include <modules/generators/SineWave.h>
 
 #include <algorithm>
 

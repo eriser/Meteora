@@ -1,6 +1,6 @@
 #pragma once
-#include "../models/MeteoraTypes.h"
-#include "../utils/MeteoraDefs.h"
+#include "../../models/MeteoraTypes.h"
+#include "../../utils/MeteoraDefs.h"
 
 /**
 	20/10/2016 IGenerator.h
