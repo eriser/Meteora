@@ -122,10 +122,12 @@
     <ClInclude Include="src\generators\IGenerator.h" />
     <ClInclude Include="src\models\MeteoraTypes.h" />
     <ClInclude Include="src\utils\MeteoraDefs.h" />
+    <ClInclude Include="src\generators\WhiteNoise.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\generators\SineWave.cpp" />
     <ClCompile Include="src\generators\IGenerator.cpp" />
+    <ClCompile Include="src\generators\WhiteNoise.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

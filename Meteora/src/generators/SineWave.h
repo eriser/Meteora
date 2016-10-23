@@ -1,6 +1,5 @@
 #pragma once
 #include "IGenerator.h"
-#include <vector>
 
 namespace Meteora
 {
@@ -8,9 +7,9 @@ namespace Meteora
 	{
 	public:
 		SineWave();
-		~SineWave();
+		virtual ~SineWave();
 
-		virtual float generateSound(float phase) override;
+		virtual const float generateSound(const float phase) override;
 	};
 
 }

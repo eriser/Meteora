@@ -5,7 +5,7 @@
 /**
 	20/10/2016 IGenerator.h
 
-	This is the basic interface for all the Meteora generators, defining the base behaviour
+	This is the basic interface for all the Meteora generators, defining the base behaviour.
 */
 
 namespace Meteora
@@ -14,6 +14,6 @@ namespace Meteora
 	{
 	public:
 		virtual ~IGenerator();
-		virtual float generateSound(float phase) = 0;
+		virtual const float generateSound(const float phase) = 0;
 	};
 }

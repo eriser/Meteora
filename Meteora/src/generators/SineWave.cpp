@@ -13,7 +13,7 @@ namespace Meteora
 	{
 	}
 
-	float SineWave::generateSound(float phase)
+	const float SineWave::generateSound(float phase)
 	{
 		// let the control on the volume, frequency, amplitude and sampling frequency be external.
 		return sin(phase);
