@@ -27,3 +27,9 @@
 *.exe
 *.out
 *.app
+/Meteora/Debug
+/MeteoraTest/Debug
+/Meteora.sdf
+/Meteora.opensdf
+/Debug
+/ipch/METEORATEST-a2622b9f
