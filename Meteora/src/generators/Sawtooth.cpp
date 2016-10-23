@@ -14,7 +14,8 @@ namespace Meteora
 
 	const float Sawtooth::generateSound(const float phase)
 	{
-		return 0.0f;
+		// avoid division by 0.
+		return phase != 0.0f ? phase / M_TWOPI : 0.0f;
 	}
 
 }

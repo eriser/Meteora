@@ -12,6 +12,6 @@ namespace Meteora
 	}
 	const float SquareWave::generateSound(const float phase)
 	{
-		return 0.0f;
+		return phase >= M_PI ? 1.0f : 0.0f;
 	}
 }

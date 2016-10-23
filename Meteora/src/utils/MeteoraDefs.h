@@ -6,17 +6,17 @@
 */
 
 #ifndef M_PI
-#define M_PI 3.14159265359
+#define M_PI 3.14159265359f
 #endif
 
 #ifndef M_2PI
-#define M_TWOPI 6.28318530718
+#define M_TWOPI 6.28318530718f
 #endif
 
 #ifndef M_HALFPI
-#define M_HALFPI 1.57079632679
+#define M_HALFPI 1.57079632679f
 #endif
 
 #ifndef M_QUARTERPI
-#define M_QUARTPI 0.78539816339
+#define M_QUARTPI 0.78539816339f
 #endif
