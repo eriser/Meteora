@@ -14,37 +14,24 @@ namespace MeteoraTest
 	{
 	public:
 		
-		TEST_METHOD(Test_SineWave_GenerateSound_Inputs)
+		TEST_METHOD(Test_SineWave_GenerateSound_Inputs_Zero)
 		{
 			// create a new SineWave generator
 			SineWave sineGenerator = SineWave();
 
 			// try to generate a sound with negative frequency
-			auto retSound = sineGenerator.generateSound(44100, -1, 1000, 1);
+			auto retSound = sineGenerator.generateSound(0);
 			
-			// look up for non zeroes elements
-			int numberOfNotZeroes = std::count_if(retSound.begin(), retSound.end(), [](SoundSample x) { return x != 0; });
-
 			// they must be 0.
-			Assert::AreEqual(numberOfNotZeroes, 0);
+			Assert::AreEqual(retSound, 0.0f);
 		}
 
-		TEST_METHOD(Test_SineWave_GenerateSound_Range)
+		TEST_METHOD(Test_SineWave_GenerateSound_Inputs_Max_Value)
 		{
-			// create a new SineWave generator
 			SineWave sineGenerator = SineWave();
-			const double MaxFreq = 200;
-			const double IncFreq = 25;
-
-			// generate a sine wave
-			for (double sweepFreq = 50; sweepFreq < MaxFreq; sweepFreq += IncFreq)
-			{
-				// generate a sine wave with 1000 ms length
-				auto res = sineGenerator.generateSound(44100, sweepFreq, 1000, 1);
-
-				// the number of samples generated shall be the same
-				Assert::AreEqual(res.size(), (size_t)44100 * 1);
-			}
+			auto value = sineGenerator.generateSound(M_HALFPI);
+			// ensure that the quality is pretty high
+			Assert::IsTrue(value <= 1.0f && value >= 0.99999f);
 		}
 	};
 }

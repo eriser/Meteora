@@ -10,7 +10,7 @@ namespace Meteora
 		SineWave();
 		~SineWave();
 
-		virtual std::vector<SoundSample> generateSound(uint32_t samplingFrequency, float frequency, Duration duration, float volume) override;
+		virtual float generateSound(float phase) override;
 	};
 
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 /**
 	20/10/2016	MeteoraTypes.h

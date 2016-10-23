@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include "../models/MeteoraTypes.h"
 #include "../utils/MeteoraDefs.h"
 
@@ -15,6 +14,6 @@ namespace Meteora
 	{
 	public:
 		virtual ~IGenerator();
-		virtual std::vector<SoundSample> generateSound(uint32_t samplingFrequency, float frequency, Duration duration, float volume) = 0;
+		virtual float generateSound(float phase) = 0;
 	};
 }
