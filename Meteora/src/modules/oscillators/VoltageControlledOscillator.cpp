@@ -1,5 +1,6 @@
 #include "VoltageControlledOscillator.h"
 #include "../generators/SineWave.h"
+#include "../../utils/FrequencyHelper.h"
 
 namespace Meteora
 {
@@ -21,11 +22,12 @@ namespace Meteora
 	{
 	}
 
-	const Voltage VoltageControlledOscillator::output()
+	const Voltage VoltageControlledOscillator::output(const float time) const
 	{
 		Voltage ret = .0f;
 
-		//float frequency = 
+		float frequency = FrequencyHelper::calculateFrequency(octave, pitch);
+		ret = generator->generateSound(M_TWOPI * frequency * time);
 
 		return ret;
 	}
@@ -37,7 +39,7 @@ namespace Meteora
 
 	void VoltageControlledOscillator::setOctave(const Octave octave)
 	{
-		if ( octave >= 0 && octave <= 10 )
+		if ( FrequencyHelper::isValidOctave(octave) )
 		{
 			this->octave = octave;
 		}
@@ -50,7 +52,7 @@ namespace Meteora
 
 	void VoltageControlledOscillator::setPitch(const Pitch pitch)
 	{
-		if (pitch >= 0 && pitch <= 1)
+		if ( FrequencyHelper::isValidPitch(pitch) )
 		{
 			this->pitch = pitch;
 		}

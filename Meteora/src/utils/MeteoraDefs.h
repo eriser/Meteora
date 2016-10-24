@@ -22,5 +22,13 @@
 #endif
 
 #ifndef M_A4_NOTE
-#define M_A4_NOTE 440
+#define M_A4_NOTE 440.0f
+#endif
+
+#ifndef M_C0_NOTE
+#define M_C0_NOTE 16.35f
+#endif
+
+#ifndef M_TEMPERED_NOTE_RATIO
+#define M_TEMPERED_NOTE_RATIO 1.059463f
 #endif

@@ -15,7 +15,7 @@ namespace Meteora
 #pragma endregion
 
 #pragma region Methods
-		const Voltage output();
+		const Voltage output(const float time) const;
 #pragma endregion
 
 #pragma region Getters and Setters
