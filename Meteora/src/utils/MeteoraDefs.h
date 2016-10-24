@@ -20,3 +20,7 @@
 #ifndef M_QUARTERPI
 #define M_QUARTPI 0.78539816339f
 #endif
+
+#ifndef M_A4_NOTE
+#define M_A4_NOTE 440
+#endif

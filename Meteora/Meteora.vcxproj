@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\utils\FrequencyHelper.h" />
     <ClInclude Include="src\modules\mixers\RingModulator.h" />
     <ClInclude Include="src\modules\mixers\BasicMixer.h" />
     <ClInclude Include="src\modules\interfaces\InstrumentInterface.h" />
@@ -148,6 +149,7 @@
     <ClInclude Include="src\modules\amplifiers\VoltageControlledAmplifier.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\utils\FrequencyHelper.cpp" />
     <ClCompile Include="src\modules\mixers\RingModulator.cpp" />
     <ClCompile Include="src\modules\mixers\BasicMixer.cpp" />
     <ClCompile Include="src\modules\interfaces\InstrumentInterface.cpp" />

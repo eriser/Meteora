@@ -99,6 +99,9 @@
     <ClInclude Include="src\modules\mixers\RingModulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\utils\FrequencyHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\modules\generators\IGenerator.cpp">
@@ -177,6 +180,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\modules\mixers\RingModulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\FrequencyHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
