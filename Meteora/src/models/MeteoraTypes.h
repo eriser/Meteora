@@ -11,8 +11,9 @@ namespace Meteora
 	using SoundSample = int32_t;	// value sampled at 32 bits
 	using Duration = uint32_t;		// milliseconds
 	using Octave = uint8_t;			// octave
-	using Pitch = float;			// pitch
+	using Pitch = double;			// pitch
 	using Gate = bool;				// gate
-	using Voltage = float;			// output voltage of a module
+	using Voltage = double;			// output voltage of a module
 	using Note = uint8_t;			// note
+	using Frequency = double;		// frequency
 }

@@ -10,12 +10,13 @@ namespace Meteora
 	public:
 #pragma region Constructor
 		VoltageControlledOscillator();
-		VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave = .0f, Pitch pitch = .0f);
+		VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave = .0f, Pitch pitch = .0);
 		~VoltageControlledOscillator();
 #pragma endregion
 
 #pragma region Methods
 		const Voltage output(const float time) const;
+		const Voltage output(const float time, std::shared_ptr<IGenerator> generator) const;
 #pragma endregion
 
 #pragma region Getters and Setters

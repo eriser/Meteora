@@ -26,7 +26,10 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="generators\TestSineWave.cpp">
+    <ClCompile Include="modules\generators\TestSineWave.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\TestFrequencyHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

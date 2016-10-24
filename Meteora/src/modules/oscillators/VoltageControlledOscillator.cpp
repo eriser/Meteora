@@ -14,7 +14,7 @@ namespace Meteora
 		this->generator = generator;
 		this->octave = octave;
 		this->pitch = pitch;
-		this->phase = .0f;
+		this->phase = .0;
 	}
 
 
@@ -24,10 +24,18 @@ namespace Meteora
 
 	const Voltage VoltageControlledOscillator::output(const float time) const
 	{
-		Voltage ret = .0f;
+		return output(time, this->generator);
+	}
 
-		float frequency = FrequencyHelper::calculateFrequency(octave, pitch);
-		ret = generator->generateSound(M_TWOPI * frequency * time);
+	const Voltage VoltageControlledOscillator::output(const float time, std::shared_ptr<IGenerator> generator) const
+	{
+		Voltage ret = .0;
+
+		if (generator != nullptr)
+		{
+			float frequency = FrequencyHelper::calculateFrequency(octave, pitch);
+			ret = generator->generateSound(M_TWOPI * frequency * time);
+		}
 
 		return ret;
 	}
