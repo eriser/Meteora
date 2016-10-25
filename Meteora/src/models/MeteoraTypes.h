@@ -16,4 +16,5 @@ namespace Meteora
 	using Voltage = double;			// output voltage of a module
 	using Note = uint8_t;			// note
 	using Frequency = double;		// frequency
+	using Time = double;			// time (typically in seconds)
 }

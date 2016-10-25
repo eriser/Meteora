@@ -4,11 +4,16 @@
 
 namespace Meteora
 {
+	/// <summary> Secondary constructor, initialized with a SineWave oscillator </summary>
 	VoltageControlledOscillator::VoltageControlledOscillator() :
 		VoltageControlledOscillator(std::make_shared<SineWave>())
 	{
 	}
 
+	/// <summary> Main VoltageControlledOscillator class constructor </summary>
+	/// <param name="generator">Shared pointer containing the chosen type of generator</param>
+	/// <param name="octave"> The octave of the sound </param>
+	/// <param name="pitch"> The pitch of the sound to generate, following the 1V/Octave standard </param>
 	VoltageControlledOscillator::VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave, Pitch pitch)
 	{
 		this->generator = generator;
@@ -17,17 +22,24 @@ namespace Meteora
 		this->phase = .0;
 	}
 
-
+	/// <summary> Destructor </summary>
 	VoltageControlledOscillator::~VoltageControlledOscillator()
 	{
 	}
 
-	const Voltage VoltageControlledOscillator::output(const float time) const
+	/// <summary> Calculate the output value for the oscillator at a given time </summary>
+	/// <param name="time"> Time in seconds</param>
+	const Voltage VoltageControlledOscillator::output(const Time time) const
 	{
 		return output(time, this->generator);
 	}
 
-	const Voltage VoltageControlledOscillator::output(const float time, std::shared_ptr<IGenerator> generator) const
+	/// <summary>	Calculate the output for a given generator at a given time. This method could be
+	///				redundant considering the other output method However this could be useful when
+	///				the output for multiple generators is needed at the same time.
+	/// </summary>
+	///
+	const Voltage VoltageControlledOscillator::output(const Time time, std::shared_ptr<IGenerator> generator) const
 	{
 		Voltage ret = .0;
 
