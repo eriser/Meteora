@@ -58,6 +58,6 @@
     <Library Include="thirdparty\fmod\fmod_vc.lib" />
   </ItemGroup>
   <ItemGroup>
-    <Object Include="thirdparty\fmod\fmod.dll" />
+    <None Include="thirdparty\fmod\fmod.dll" />
   </ItemGroup>
 </Project>
