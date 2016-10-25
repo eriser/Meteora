@@ -10,7 +10,7 @@ namespace Meteora
 
 		if (isValidOctave(octave) && isValidPitch(pitch))
 		{
-			ret = M_A4_NOTE * pow(2, calculateNotePosition(octave, 1) + pitch - M_A4_NOTE_POS);
+			ret = M_A4_NOTE * pow(M_TEMPERED_NOTE_RATIO, calculateNotePosition(octave, 1) - M_A4_NOTE_POS) * pow(2, pitch);
 		}
 
 		return ret;
