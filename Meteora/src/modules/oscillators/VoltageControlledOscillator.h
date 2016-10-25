@@ -28,6 +28,8 @@ namespace Meteora
 
 		const std::shared_ptr<IGenerator> getGenerator() const;
 		void setGenerator(const std::shared_ptr<IGenerator>);
+
+		const Frequency getFrequency() const;
 #pragma endregion
 
 

@@ -91,4 +91,9 @@ namespace Meteora
 		}
 	}
 
+	const Frequency VoltageControlledOscillator::getFrequency() const
+	{
+		return FrequencyHelper::calculateFrequency(octave, pitch);
+	}
+
 }
