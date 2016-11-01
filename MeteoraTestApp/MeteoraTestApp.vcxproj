@@ -158,14 +158,6 @@
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="thirdparty\fmod\fmod.h" />
-    <ClInclude Include="thirdparty\fmod\fmod.hpp" />
-    <ClInclude Include="thirdparty\fmod\fmod_codec.h" />
-    <ClInclude Include="thirdparty\fmod\fmod_common.h" />
-    <ClInclude Include="thirdparty\fmod\fmod_dsp.h" />
-    <ClInclude Include="thirdparty\fmod\fmod_dsp_effects.h" />
-    <ClInclude Include="thirdparty\fmod\fmod_errors.h" />
-    <ClInclude Include="thirdparty\fmod\fmod_output.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MeteoraTestApp.cpp" />
