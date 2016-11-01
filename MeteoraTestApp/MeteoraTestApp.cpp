@@ -4,10 +4,6 @@
 #include "stdafx.h"
 #include <iostream>
 #include <iomanip>
-#include <modules/generators/SineWave.h>
-#include <modules/oscillators/VoltageControlledOscillator.h>
-
-using namespace Meteora;
 
 int main()
 {
