@@ -23,7 +23,7 @@ namespace MeteoraTest
 			auto retSound = sineGenerator.generateSound(0);
 			
 			// they must be 0.
-			Assert::AreEqual(retSound, 0.0f);
+			Assert::AreEqual(retSound, 0.0);
 		}
 
 		TEST_METHOD(Test_SineWave_GenerateSound_Inputs_Max_Value)
@@ -31,7 +31,7 @@ namespace MeteoraTest
 			SineWave sineGenerator = SineWave();
 			auto value = sineGenerator.generateSound(M_HALFPI);
 			// ensure that the quality is pretty high
-			Assert::IsTrue(value <= 1.0f && value >= 0.99999f);
+			Assert::IsTrue(value <= 1.0 && value >= 0.99999);
 		}
 	};
 }

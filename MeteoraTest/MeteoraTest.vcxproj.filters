@@ -32,5 +32,8 @@
     <ClCompile Include="utils\TestFrequencyHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="modules\oscillators\TestVoltageControlledOscillator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

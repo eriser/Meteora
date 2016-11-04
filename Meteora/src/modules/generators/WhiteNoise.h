@@ -18,5 +18,4 @@ namespace Meteora {
 		std::normal_distribution<float> distribution;
 		std::default_random_engine generator;
 	};
-
 }

@@ -2,15 +2,16 @@
 #include <memory>
 #include "../../models/MeteoraTypes.h"
 #include "../generators/IGenerator.h"
+#include "../IModule.h"
 
 namespace Meteora
 {
-	class VoltageControlledOscillator
+	class VoltageControlledOscillator : public IModule
 	{
 	public:
 #pragma region Constructor
 		VoltageControlledOscillator();
-		VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave = .0f, Pitch pitch = .0);
+		VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Frequency samplingFrequency = 44100,  Octave octave = .0f, Pitch pitch = .0);
 		~VoltageControlledOscillator();
 #pragma endregion
 
@@ -43,5 +44,8 @@ namespace Meteora
 		float phase;
 #pragma endregion
 	};
+
+	// Simplify typename using an alias
+	using VCO = VoltageControlledOscillator;
 
 }

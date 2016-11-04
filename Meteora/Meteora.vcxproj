@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\modules\IModule.h" />
     <ClInclude Include="src\utils\FrequencyHelper.h" />
     <ClInclude Include="src\modules\mixers\RingModulator.h" />
     <ClInclude Include="src\modules\mixers\BasicMixer.h" />

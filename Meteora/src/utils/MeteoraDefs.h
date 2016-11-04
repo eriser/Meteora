@@ -41,6 +41,10 @@
 #define M_NOTE_FREQ_TOLERANCE 0.01
 #endif
 
+#ifndef DEFAULT_SAMPLNG_FREQUENCY
+#define DEFAULT_SAMPLNG_FREQUENCY 44100.0
+#endif
+
 namespace Meteora
 {
 	enum Notes
