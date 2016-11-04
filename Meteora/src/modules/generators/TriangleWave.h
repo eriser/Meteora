@@ -9,7 +9,7 @@ namespace Meteora
 		TriangleWave();
 		~TriangleWave();
 
-		virtual const float generateSound(const float phase) override;
+		virtual const Sound generateSound(const Phase phase) override;
 	};
 
 }

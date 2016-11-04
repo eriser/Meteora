@@ -12,7 +12,7 @@ namespace Meteora
 	{
 	}
 
-	const float TriangleWave::generateSound(const float phase)
+	const Sound TriangleWave::generateSound(const Phase phase)
 	{
 		return phase <= M_PI ? phase / M_TWOPI : -phase / M_TWOPI;
 	}

@@ -15,7 +15,7 @@ namespace Meteora
 	}
 
 	// use the standard normal distribution to generate gaussian white noise
-	const float WhiteNoise::generateSound(const float phase)
+	const Sound WhiteNoise::generateSound(const Phase phase)
 	{
 		return distribution(generator);
 	}

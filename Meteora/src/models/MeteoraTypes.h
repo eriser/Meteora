@@ -8,7 +8,9 @@
 
 namespace Meteora
 {
-	using SoundSample = int32_t;	// value sampled at 32 bits
+	using SoundSample_32 = int32_t;	// value sampled at 32 bits
+	using SoundSample_16 = int16_t;	// value sampled at 16 bits
+	using Sound = double;			// sound to be sampled
 	using Duration = uint32_t;		// milliseconds
 	using Octave = uint8_t;			// octave
 	using Pitch = double;			// pitch
@@ -17,4 +19,5 @@ namespace Meteora
 	using Note = uint8_t;			// note
 	using Frequency = double;		// frequency
 	using Time = double;			// time (typically in seconds)
+	using Phase = double;			// phase
 }

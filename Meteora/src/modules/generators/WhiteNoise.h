@@ -11,7 +11,7 @@ namespace Meteora {
 		WhiteNoise();
 		virtual ~WhiteNoise();
 
-		virtual const float generateSound(const float phase = 0) override;
+		virtual const Sound generateSound(const Phase phase = 0) override;
 
 	protected:
 		void initRandomGenerator();
