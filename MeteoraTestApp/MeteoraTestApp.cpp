@@ -4,10 +4,11 @@
 #include "stdafx.h"
 #include <iostream>
 #include <iomanip>
+#include <portaudio.h>
 
 int main()
 {
-	
+	Pa_Initialize();
 	std::cin.get();
 
 	return 0;

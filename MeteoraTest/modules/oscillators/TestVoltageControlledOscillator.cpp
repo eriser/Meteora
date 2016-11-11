@@ -21,6 +21,7 @@ namespace MeteoraTest
 		{
 			Frequency samplingFreq = DEFAULT_SAMPLNG_FREQUENCY;
 			Time duration = .02;
+
 			// create a new VCO using a sine wave generator
 			VCO vco = VCO(std::make_shared<SineWave>(), samplingFreq, 4, 9 / 12.0);
 

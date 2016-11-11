@@ -21,6 +21,9 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="thirdparty\portaudio\portaudio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -31,9 +34,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="thirdparty\fmod\fmod_vc.lib" />
+    <None Include="thirdparty\portaudio\portaudio_x86.dll" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="thirdparty\fmod\fmod.dll" />
+    <Library Include="thirdparty\portaudio\portaudio_x86.lib" />
   </ItemGroup>
 </Project>
