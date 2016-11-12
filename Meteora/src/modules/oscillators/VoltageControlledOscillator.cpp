@@ -20,6 +20,7 @@ namespace Meteora
 		this->octave = octave;
 		this->pitch = pitch;
 		this->phase = .0;
+		this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);
 	}
 
 	/// <summary> Destructor </summary>
@@ -45,7 +46,6 @@ namespace Meteora
 
 		if (generator != nullptr)
 		{
-			Frequency frequency = FrequencyHelper::calculateFrequency(octave, pitch);
 			ret = generator->generateSound(M_TWOPI * frequency * time);
 		}
 
@@ -62,6 +62,7 @@ namespace Meteora
 		if ( FrequencyHelper::isValidOctave(octave) )
 		{
 			this->octave = octave;
+			this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);
 		}
 	}
 
@@ -75,6 +76,7 @@ namespace Meteora
 		if ( FrequencyHelper::isValidPitch(pitch) )
 		{
 			this->pitch = pitch;
+			this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);
 		}
 	}
 
@@ -93,7 +95,7 @@ namespace Meteora
 
 	const Frequency VoltageControlledOscillator::getFrequency() const
 	{
-		return FrequencyHelper::calculateFrequency(octave, pitch);
+		return frequency;
 	}
 
 }

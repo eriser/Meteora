@@ -35,4 +35,5 @@ protected:
 	double left_phase;
 	double right_phase;
 	VCO vco;
+	const int framesPerBuffer = paFramesPerBufferUnspecified;
 };

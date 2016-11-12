@@ -41,7 +41,8 @@ namespace Meteora
 		std::shared_ptr<IGenerator> generator;
 
 	private:
-		float phase;
+		Phase phase;
+		Frequency frequency;
 #pragma endregion
 	};
 

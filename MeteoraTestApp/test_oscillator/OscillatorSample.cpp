@@ -1,15 +1,14 @@
 #include "stdafx.h"
 #include "OscillatorSample.h"
 #include "src\utils\MeteoraDefs.h"
-
+#include <conio.h>
 
 OscillatorSample::OscillatorSample() : error(Pa_Initialize())
 {
-	vco = VCO(std::make_shared<SineWave>(), 4, 0);
+	vco = VCO(std::make_shared<SineWave>(), 4, 0.12);
 	left_phase = 0.0;
 	right_phase = 0.0;
 }
-
 
 OscillatorSample::~OscillatorSample()
 {
@@ -23,7 +22,39 @@ void OscillatorSample::performSample()
 {
 	init();
 	play();
-	Pa_Sleep(5000);
+	char c;
+	do
+	{
+		c = _getch();
+		if (c == 'q') vco.setOctave(vco.getOctave() + 1);
+		else if (c == 'a') vco.setOctave(vco.getOctave() - 1);
+
+		if (c == 'w')
+		{
+			if (vco.getPitch() >= 11.0 / 12.0)
+			{
+				vco.setOctave(vco.getOctave() + 1);
+				vco.setPitch(0);
+			}
+			else
+			{
+				vco.setPitch(vco.getPitch() + 0.010);
+			}
+		}
+		else if (c == 's') 
+		{
+			if (vco.getPitch() <= 1.0 / 12.0)
+			{
+				vco.setOctave(vco.getOctave() - 1);
+				vco.setPitch(1);
+			}
+			else
+			{
+				vco.setPitch(vco.getPitch() - 0.010);
+			}
+		}
+
+	}while (c != 'e');
 	stop();
 	close();
 }
@@ -60,7 +91,7 @@ void OscillatorSample::init()
 		NULL, /* no input */
 		&outputParameters,
 		DEFAULT_SAMPLNG_FREQUENCY,
-		1024,
+		framesPerBuffer,
 		paClipOff,      /* we won't output out of range samples so don't bother clipping them */
 		paCallback,
 		this            /* Using 'this' for userData so we can cast to Sine* in paCallback method */
@@ -121,13 +152,14 @@ int OscillatorSample::callback(const void * inputBuffer, void * outputBuffer, un
 	(void)timeInfo; /* Prevent unused variable warnings. */
 	(void)statusFlags;
 	(void)inputBuffer;
-	auto min_t = 1 / DEFAULT_SAMPLNG_FREQUENCY;
+	auto min_t = 1.0 / DEFAULT_SAMPLNG_FREQUENCY;
 
 	for (i = 0; i<framesPerBuffer; i++)
 	{
-		left_phase += i * min_t;
-		*out++ = (float)vco.output(left_phase);
-		*out++ = 0;
+		left_phase += min_t;
+		auto value = vco.output(left_phase);
+		*out++ = value;
+		*out++ = value;
 	}
 
 	return paContinue;
