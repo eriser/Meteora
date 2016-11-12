@@ -16,8 +16,8 @@ namespace Meteora
 #pragma endregion
 
 #pragma region Methods
-		const Voltage output(const Time time) const;
-		const Voltage output(const Time time, std::shared_ptr<IGenerator> generator) const;
+		const Voltage output(const Time time);
+		const Voltage output(const Time time, std::shared_ptr<IGenerator> generator);
 #pragma endregion
 
 #pragma region Getters and Setters

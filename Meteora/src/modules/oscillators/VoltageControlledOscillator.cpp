@@ -30,7 +30,7 @@ namespace Meteora
 
 	/// <summary> Calculate the output value for the oscillator at a given time </summary>
 	/// <param name="time"> Time in seconds</param>
-	const Voltage VoltageControlledOscillator::output(const Time time) const
+	const Voltage VoltageControlledOscillator::output(const Time time)
 	{
 		return output(time, this->generator);
 	}
@@ -40,7 +40,7 @@ namespace Meteora
 	///				the output for multiple generators is needed at the same time.
 	/// </summary>
 	///
-	const Voltage VoltageControlledOscillator::output(const Time time, std::shared_ptr<IGenerator> generator) const
+	const Voltage VoltageControlledOscillator::output(const Time time, std::shared_ptr<IGenerator> generator)
 	{
 		Voltage ret = .0;
 
