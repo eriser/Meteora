@@ -15,7 +15,7 @@ namespace Meteora {
 
 	protected:
 		void initRandomGenerator();
-		std::normal_distribution<double> distribution;
+		std::normal_distribution<Sound> distribution;
 		std::default_random_engine generator;
 	};
 }

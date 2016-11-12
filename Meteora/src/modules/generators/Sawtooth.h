@@ -9,7 +9,7 @@ namespace Meteora
 		Sawtooth();
 		~Sawtooth();
 
-		virtual const Phase generateSound(const Phase phase) override;
+		virtual const Sound generateSound(const Phase phase) override;
 	};
 
 }

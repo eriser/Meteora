@@ -23,7 +23,7 @@ namespace MeteoraTest
 			Time duration = .02;
 
 			// create a new VCO using a sine wave generator
-			VCO vco = VCO(std::make_shared<SineWave>(), samplingFreq, 4, 9 / 12.0);
+			VCO vco = VCO(std::make_shared<SineWave>(), 4, 9 / 12.0);
 
 			std::ofstream file("VCO_Sine.csv");
 

@@ -11,7 +11,7 @@ namespace Meteora
 	public:
 #pragma region Constructor
 		VoltageControlledOscillator();
-		VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Frequency samplingFrequency = 44100,  Octave octave = .0f, Pitch pitch = .0);
+		VoltageControlledOscillator(std::shared_ptr<IGenerator> generator,  Octave octave = .0f, Pitch pitch = .0);
 		~VoltageControlledOscillator();
 #pragma endregion
 

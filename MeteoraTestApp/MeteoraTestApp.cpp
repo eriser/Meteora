@@ -1,16 +1,16 @@
-// MeteoraTestApp.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
-#include <iostream>
-#include <iomanip>
-#include <portaudio.h>
+#include <stdio.h>
+#include <math.h>
+#include "test_oscillator/OscillatorSample.h"
 
-int main()
+int main(int argc, char** argv)
 {
-	Pa_Initialize();
-	std::cin.get();
+	OscillatorSample sample;
+	
+	if (sample.getError() == paNoError)
+	{
+		sample.performSample();
+	}
 
 	return 0;
 }
-

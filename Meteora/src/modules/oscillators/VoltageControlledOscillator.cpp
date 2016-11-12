@@ -14,13 +14,12 @@ namespace Meteora
 	/// <param name="generator">Shared pointer containing the chosen type of generator</param>
 	/// <param name="octave"> The octave of the sound </param>
 	/// <param name="pitch"> The pitch of the sound to generate, following the 1V/Octave standard </param>
-	VoltageControlledOscillator::VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Frequency samplingFrequency, Octave octave, Pitch pitch)
+	VoltageControlledOscillator::VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave, Pitch pitch)
 	{
 		this->generator = generator;
 		this->octave = octave;
 		this->pitch = pitch;
 		this->phase = .0;
-		this->samplingFrequency = samplingFrequency != 0.0 ? samplingFrequency : DEFAULT_SAMPLNG_FREQUENCY;
 	}
 
 	/// <summary> Destructor </summary>

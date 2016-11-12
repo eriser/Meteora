@@ -24,12 +24,18 @@
     <ClInclude Include="thirdparty\portaudio\portaudio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="test_oscillator\OscillatorSample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MeteoraTestApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_oscillator\OscillatorSample.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
