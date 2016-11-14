@@ -12,6 +12,7 @@
 *.so
 *.dylib
 *.dll
+!portaudio_x86.dll
 
 # Fortran module files
 *.mod
@@ -22,6 +23,7 @@
 *.la
 *.a
 *.lib
+!portaudio_x86.lib
 
 # Executables
 *.exe
