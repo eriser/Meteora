@@ -1,6 +1,7 @@
 #include "VoltageControlledOscillator.h"
 #include "../generators/SineWave.h"
 #include "../../utils/FrequencyHelper.h"
+#include "../../utils/MathUtils.h"
 
 namespace Meteora
 {
@@ -46,6 +47,7 @@ namespace Meteora
 
 		if (generator != nullptr)
 		{
+			phase = MathUtils::wrapTwoPI(M_TWOPI * frequency * time);
 			ret = generator->generateSound(M_TWOPI * frequency * time);
 		}
 

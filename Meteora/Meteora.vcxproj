@@ -143,6 +143,7 @@
     <ClInclude Include="src\modules\generators\SineWave.h" />
     <ClInclude Include="src\modules\generators\IGenerator.h" />
     <ClInclude Include="src\models\MeteoraTypes.h" />
+    <ClInclude Include="src\utils\MathUtils.h" />
     <ClInclude Include="src\utils\MeteoraDefs.h" />
     <ClInclude Include="src\modules\generators\WhiteNoise.h" />
     <ClInclude Include="src\modules\generators\TriangleWave.h" />

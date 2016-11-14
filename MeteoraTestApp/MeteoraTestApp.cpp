@@ -5,7 +5,7 @@
 
 int main(int argc, char** argv)
 {
-	OscillatorSample sample;
+	OscillatorSample sample = OscillatorSample();
 	
 	if (sample.getError() == paNoError)
 	{
