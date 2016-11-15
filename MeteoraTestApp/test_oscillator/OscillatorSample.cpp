@@ -5,7 +5,7 @@
 
 OscillatorSample::OscillatorSample() : error(Pa_Initialize())
 {
-	vco = VCO(std::make_shared<TriangleWave>(), 4, 0.12);
+	vco = VCO(std::make_shared<SineWave>(), 4, 0.12);
 	left_phase = 0.0;
 	right_phase = 0.0;
 }

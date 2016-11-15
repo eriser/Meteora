@@ -14,7 +14,7 @@ namespace Meteora
 
 	const Sound TriangleWave::generateSound(const Phase phase)
 	{
-		return phase <= M_PI ? phase / M_TWOPI : -phase / M_TWOPI;
+		return phase <= M_PI ? (phase - M_PI) / M_TWOPI : (-phase + M_PI) / M_TWOPI;
 	}
 
 }

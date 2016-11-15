@@ -25,7 +25,6 @@ namespace Meteora
 		this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);
 		this->samplingFrequency = samplingFrequency != 0 ? samplingFrequency : 1.0;
 		this->oneOverSamplingFrequency = 1.0 / this->samplingFrequency;
-		this->step = 0;
 	}
 
 	/// <summary> Destructor </summary>
@@ -52,7 +51,6 @@ namespace Meteora
 		phase += M_TWOPI * frequency * oneOverSamplingFrequency;
 		phase = MathUtils::wrapTwoPI(phase);
 		ret = generator->generateSound(phase);
-		step++;
 
 		return ret;
 	}

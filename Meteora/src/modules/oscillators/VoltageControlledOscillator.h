@@ -45,7 +45,6 @@ namespace Meteora
 
 	private:
 		Time oneOverSamplingFrequency;
-		long long step;
 #pragma endregion
 	};
 
