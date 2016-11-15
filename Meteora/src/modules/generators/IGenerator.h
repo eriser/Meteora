@@ -15,5 +15,7 @@ namespace Meteora
 	public:
 		virtual ~IGenerator();
 		virtual const Sound generateSound(const Phase phase) = 0;
+	protected:
+		IGenerator();
 	};
 }

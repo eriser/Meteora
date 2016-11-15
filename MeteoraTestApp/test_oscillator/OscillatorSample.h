@@ -6,6 +6,8 @@
 #include "modules\generators\SquareWave.h"
 #include "modules\generators\TriangleWave.h"
 #include "modules\generators\WhiteNoise.h"
+#include "modules\envelope\ADSR.h"
+#include <vector>
 
 using namespace Meteora;
 
@@ -25,6 +27,8 @@ protected:
 	void stop();
 	void close();
 
+	void updateScreen();
+
 	static int paCallback(const void *inputBuffer, void *outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags, void *userData);
 	int callback(const void *inputBuffer, void *outputBuffer, unsigned long framesPerBuffer, const PaStreamCallbackTimeInfo* timeInfo, PaStreamCallbackFlags statusFlags);
 
@@ -35,5 +39,10 @@ protected:
 	double left_phase;
 	double right_phase;
 	VCO vco;
+	ADSR env;
+	std::vector<std::shared_ptr<IGenerator>> generators;
+	int gen;
+
 	const int framesPerBuffer = paFramesPerBufferUnspecified;
+	bool gate;
 };

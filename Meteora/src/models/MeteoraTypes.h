@@ -12,7 +12,7 @@ namespace Meteora
 	using SoundSample_16 = int16_t;	// value sampled at 16 bits
 	using Sound = double;			// sound to be sampled
 	using Duration = uint32_t;		// milliseconds
-	using Octave = uint8_t;			// octave
+	using Octave = int;			// octave
 	using Pitch = double;			// pitch
 	using Gate = bool;				// gate
 	using Voltage = double;			// output voltage of a module

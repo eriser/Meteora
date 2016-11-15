@@ -19,7 +19,7 @@ namespace MeteoraTest
 
 		TEST_METHOD(Test_VCO_Sine)
 		{
-			Frequency samplingFreq = DEFAULT_SAMPLNG_FREQUENCY;
+			Frequency samplingFreq = DEFAULT_SAMPLING_FREQUENCY;
 			Time duration = .02;
 
 			// create a new VCO using a sine wave generator
