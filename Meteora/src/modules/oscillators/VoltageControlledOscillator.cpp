@@ -2,6 +2,7 @@
 #include "../generators/SineWave.h"
 #include "../../utils/FrequencyHelper.h"
 #include "../../utils/MathUtils.h"
+#include <iostream>
 
 namespace Meteora
 {
@@ -15,13 +16,16 @@ namespace Meteora
 	/// <param name="generator">Shared pointer containing the chosen type of generator</param>
 	/// <param name="octave"> The octave of the sound </param>
 	/// <param name="pitch"> The pitch of the sound to generate, following the 1V/Octave standard </param>
-	VoltageControlledOscillator::VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave, Pitch pitch)
+	VoltageControlledOscillator::VoltageControlledOscillator(std::shared_ptr<IGenerator> generator, Octave octave, Pitch pitch, Frequency samplingFrequency)
 	{
 		this->generator = generator;
 		this->octave = octave;
 		this->pitch = pitch;
 		this->phase = .0;
 		this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);
+		this->samplingFrequency = samplingFrequency != 0 ? samplingFrequency : 1.0;
+		this->oneOverSamplingFrequency = 1.0 / this->samplingFrequency;
+		this->step = 0;
 	}
 
 	/// <summary> Destructor </summary>
@@ -31,9 +35,9 @@ namespace Meteora
 
 	/// <summary> Calculate the output value for the oscillator at a given time </summary>
 	/// <param name="time"> Time in seconds</param>
-	const Voltage VoltageControlledOscillator::output(const Time time)
+	const Voltage VoltageControlledOscillator::output()
 	{
-		return output(time, this->generator);
+		return output(this->generator);
 	}
 
 	/// <summary>	Calculate the output for a given generator at a given time. This method could be
@@ -41,15 +45,14 @@ namespace Meteora
 	///				the output for multiple generators is needed at the same time.
 	/// </summary>
 	///
-	const Voltage VoltageControlledOscillator::output(const Time time, std::shared_ptr<IGenerator> generator)
+	const Voltage VoltageControlledOscillator::output(std::shared_ptr<IGenerator> generator)
 	{
 		Voltage ret = .0;
 
-		if (generator != nullptr)
-		{
-			phase = MathUtils::wrapTwoPI(M_TWOPI * frequency * time);
-			ret = generator->generateSound(M_TWOPI * frequency * time);
-		}
+		phase += M_TWOPI * frequency * oneOverSamplingFrequency;
+		phase = MathUtils::wrapTwoPI(phase);
+		ret = generator->generateSound(phase);
+		step++;
 
 		return ret;
 	}
@@ -61,7 +64,7 @@ namespace Meteora
 
 	void VoltageControlledOscillator::setOctave(const Octave octave)
 	{
-		if ( FrequencyHelper::isValidOctave(octave) )
+		if (FrequencyHelper::isValidOctave(octave))
 		{
 			this->octave = octave;
 			this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);
@@ -75,7 +78,7 @@ namespace Meteora
 
 	void VoltageControlledOscillator::setPitch(const Pitch pitch)
 	{
-		if ( FrequencyHelper::isValidPitch(pitch) )
+		if (FrequencyHelper::isValidPitch(pitch))
 		{
 			this->pitch = pitch;
 			this->frequency = FrequencyHelper::calculateFrequency(octave, pitch);

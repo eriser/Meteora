@@ -5,7 +5,7 @@
 
 OscillatorSample::OscillatorSample() : error(Pa_Initialize())
 {
-	vco = VCO(std::make_shared<SquareWave>(), 4, 0.12);
+	vco = VCO(std::make_shared<TriangleWave>(), 4, 0.12);
 	left_phase = 0.0;
 	right_phase = 0.0;
 }
@@ -31,7 +31,6 @@ void OscillatorSample::performSample()
 
 		if (c == 'w')
 		{
-			printf("%.2f\n", vco.getFrequency());
 			if (vco.getPitch() >= 11.0 / 12.0)
 			{
 				vco.setOctave(vco.getOctave() + 1);
@@ -44,7 +43,6 @@ void OscillatorSample::performSample()
 		}
 		else if (c == 's') 
 		{
-			printf("%.2f\n", vco.getFrequency());
 
 			if (vco.getPitch() <= 1.0 / 12.0)
 			{
@@ -160,7 +158,7 @@ int OscillatorSample::callback(const void * inputBuffer, void * outputBuffer, un
 	for (i = 0; i<framesPerBuffer; i++)
 	{
 		left_phase += min_t;
-		auto value = vco.output(left_phase);
+		auto value = vco.output();
 		*out++ = value;
 		*out++ = value;
 	}

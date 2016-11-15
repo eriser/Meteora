@@ -13,6 +13,10 @@
 #define M_TWOPI 6.28318530718
 #endif
 
+#ifndef M_ONE_OVER_TWOPI
+#define M_ONE_OVER_TWOPI 0.1591549430919
+#endif
+
 #ifndef M_HALFPI
 #define M_HALFPI 1.57079632679
 #endif

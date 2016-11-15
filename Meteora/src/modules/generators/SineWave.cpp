@@ -16,7 +16,7 @@ namespace Meteora
 	const Sound SineWave::generateSound(Phase phase)
 	{
 		// let the control on the volume, frequency, amplitude and sampling frequency be external.
-		return sin(phase);
+		return FastSin(phase);
 	}
 
 }

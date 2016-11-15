@@ -29,7 +29,7 @@ namespace MeteoraTest
 
 			for (Time time = 0.0; time < duration; time += 1.0 / samplingFreq)
 			{
-				file << time << ";" << vco.output(time) << std::endl;
+				file << time << ";" << vco.output() << std::endl;
 			}
 
 			file.close();
